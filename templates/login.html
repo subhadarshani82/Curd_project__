@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% csrf_token %}
+<h1>Users</h1>
+{% if user %}
+    <table>
+    <caption>User Login</caption>
+    <thead>
+    <th>Email</th>
+    <th>Password</th>
+
+    </thead>
+    {% for u in user %}
+        <tr>
+       <td> {{ u.email}}</td>
+        <td>{{ u.password }}</td>
+        </tr>
+    {% endfor %}
+{% else %}
+<h2>No data</h2>
+{% endif %}
+</table>
+</body>
+</html>
